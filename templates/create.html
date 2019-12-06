@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../static/table.css" type="text/css">
+    <meta charset="UTF-8">
+    <title>Create Assignment</title>
+</head>
+<body>
+    <h1>Create New Assignment</h1>
+    <form action="/create" method="POST">
+        <input type="number" name="aid" placeholder="Assignment Number"><br><br>
+        <input type="text" name="tid" placeholder="Teacher ID"><br><br>
+        <textarea name="ques" placeholder="Question" rows="4" columns="50"></textarea><br><br>
+        <textarea name="sin" placeholder="Sample Input"></textarea><br><br>
+        <textarea name="sout" placeholder="Sample Output"></textarea><br><br>
+        Last Date for Submission:<br>
+        <input type="date" name="date"><br><br>
+        <input type="submit" value="Create" class="btnhome"><br>
+    </form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../static/table.css" type="text/css">
+    <meta charset="UTF-8">
+    <title>Assignment List</title>
+</head>
+<body>
+    <h1>Assignments List</h1>
+    <table class="blueTable">
+        <th>Question ID</th><th>Question</th><th>Sample Input</th><th>Sample Output</th><th>Due Date</th>
+        {% for row in data %}
+            <tr>
+                {% for d in row %}
+                    <td>{{ d }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    <form action="/solve_ques">
+        <button type="Submit" class="btnhome">Solve Question</button>
+    </form>
+</body>
+</html>

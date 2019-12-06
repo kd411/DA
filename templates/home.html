@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../static/style.css" type="text/css">
+    <meta charset="UTF-8">
+    <title>Easy Assignments</title>
+</head>
+<body>
+    <form action='login' method="POST">
+        <div class="login">
+            <div class="login-screen">
+                <div class="app-title">
+                    <h1>Easy Assignments</h1>
+                    <h3>Assignments made easy for both professors and students by easy submissions and quick evaluations.</h3>
+                    <h2>Login As:</h2>
+                </div>
+                <div class="login-form">
+                    <div class="control-group">
+                        <input type="radio" name="login" value="s" checked>Student
+                        <input type="radio" name="login" value="t">Teacher<br>
+                    </div>
+                    <div class="control-group">
+                        <input type="text" class="login-field" name="id" placeholder="Login ID"><br>
+                        <label class="login-field-icon fui-user" for="login-name"></label>
+                    </div>
+                    <div class="control-group">
+                        <input type="password" class="login-field" name="pass" placeholder="Password"><br><br>
+                        <label class="login-field-icon fui-user" for="login-name"></label>
+                    </div>
+                    <input type="submit" value="Log In" class="btn btn-primary btn-large btn-block">
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

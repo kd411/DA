@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../static/style.css" type="text/css">
+    <meta charset="UTF-8">
+    <title>Teacher Dashboard</title>
+</head>
+<body>
+    <form action="/logout">
+        <button type="Submit" class="btnhome">Log Out</button>
+    </form>
+    <div class="login">
+        <div class="login-screen">
+            <div class="app-title">
+                <h1>Welcome<br>
+                    {% for message in get_flashed_messages()%}
+                        {{ message }}
+                    {% endfor %}
+                </h1>
+            </div>
+            <form action="/redirect_create">
+                <button type="Submit" class="btn btn-primary btn-large btn-block">Create New Assignment</button>
+            </form><br>
+            <form action="/evaluate">
+                <button type="Submit" class="btn btn-primary btn-large btn-block">Evaluate Assignments</button>
+            </form><br>
+            <form action="/classmarks">
+                <button type="Submit" class="btn btn-primary btn-large btn-block">Student's Marks</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

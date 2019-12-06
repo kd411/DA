@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../static/table.css" type="text/css">
+    <meta charset="UTF-8">
+    <title>Marks</title>
+</head>
+<body>
+    <h1>Marks</h1>
+    <table class="blueTable">
+        <th>USN</th><th>Marks</th><th>Total Marks</th>
+        {% for row in data %}
+            <tr>
+                {% for d in row %}
+                    <td>{{ d }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    <form action="/logout">
+        <button type="Submit" class="btnhome">Logout</button>
+    </form>
+</body>
+</html>
