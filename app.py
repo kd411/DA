@@ -131,7 +131,8 @@ def evaluate():
         cur.execute("SELECT sin, sout FROM question WHERE aid=%s", (aid, ))
         sample = cur.fetchall()
         sin = sample[0][0]
-        sout = sample[0][1]
+        sout = int(sample[0][1])
+        m = 0
         url = "https://ide.geeksforgeeks.org/main.php"
         data1 = {
             'lang': lang,
@@ -143,13 +144,14 @@ def evaluate():
         s = r.json()
         print(code)
         print(s)
-        if sout == s['output']:
-            marks = 10
+        print(s['output'])
+        if sout == int(s['output']):
+            m = 10
         cur.execute("SELECT total FROM student WHERE usn = %s", (usn, ))
         t = cur.fetchall()
         total = int(t[0][0])
-        total = total + marks
-        cur.execute("UPDATE student SET marks = %s, total = %s WHERE usn = %s", (marks, usn, total, ))
+        total = total + m
+        cur.execute("UPDATE student SET marks = %s, total = %s WHERE usn = %s", (str(m), str(total), usn, ))
     cur.execute("SELECT usn, marks, total FROM student")
     data = cur.fetchall()
     cur.close()
@@ -168,8 +170,7 @@ def classmarks():
 @app.route('/marks')
 def marks():
     cur = mysql.connection.cursor()
-    usn = request.form.get("usn")
-    cur.execute("SELECT usn, marks, total FROM student WHERE usn=%s", (usn, ))
+    cur.execute("SELECT usn, marks, total FROM student")
     data = cur.fetchall()
     cur.close()
     return render_template("marks.html", data=data)
